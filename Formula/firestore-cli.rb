@@ -5,21 +5,21 @@
 class FirestoreCli < Formula
   desc "firestore command line interface to work with googles firestore database"
   homepage "https://github.com/Ion-manden/firestore-cli"
-  version "1.1.2"
+  version "1.1.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.2/firestore-cli_1.1.2_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "38820c2ccb62c4c8e498f3ea60858be149080092deacbd69ea0ebe231b4ea234"
+    if Hardware::CPU.arm?
+      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.3/firestore-cli_1.1.3_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "bc53635769a157c39863bcb14d206fad874bab1ab098d5f94dcc542e4c7cb1d8"
 
       def install
         bin.install "firestore-cli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.2/firestore-cli_1.1.2_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "e56a3b04d38cd9be0e9b1fdfc1778627914bd9348b03cc3a280757bb4bec2ede"
+    if Hardware::CPU.intel?
+      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.3/firestore-cli_1.1.3_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "813fa9823008cb0bef1bfa850a0bf58c0860827756b1e8d88ed65e22580f4914"
 
       def install
         bin.install "firestore-cli"
@@ -28,17 +28,17 @@ class FirestoreCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.2/firestore-cli_1.1.2_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "e6952954e10d7c2e4ad45386994c93da698f8f8b473e800a75512acbc4c59199"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.3/firestore-cli_1.1.3_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "84245582ddafe6d7ed5c140a2c53f8d248882ea78425be4bbc2ccbaba372707d"
 
       def install
         bin.install "firestore-cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.2/firestore-cli_1.1.2_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "43b34cb02c3ce6a097f07dd1122432d1a3ebb25e7a0c0b995464f3c3f2ef9970"
+    if Hardware::CPU.intel?
+      url "https://github.com/Ion-manden/firestore-cli/releases/download/v1.1.3/firestore-cli_1.1.3_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c8755a3a1e2f5716f052b7ccd318f655b3a0437531d03a6b3a82b2573cd55e06"
 
       def install
         bin.install "firestore-cli"
